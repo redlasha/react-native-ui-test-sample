@@ -7,7 +7,7 @@ function getTempComponent(props) {
     return <App {...props} />
 }
 
-describe("[App] render", () => {
+describe.skip("[App] render", () => {
     let props = {};
     let component = getTempComponent(props);
     it("renders without crashing", () => {

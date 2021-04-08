@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, Text, View } from "react-native";
 import Greeting from "./Greeting";
 
 const Profile = ({ userName, name }) => {
@@ -10,9 +10,16 @@ const Profile = ({ userName, name }) => {
             <Text style={styles.textBox}>
                 {userName}({name})
             </Text>
-            <Text style={styles.textBox}>{msg}</Text>
-            <Greeting title="Bye!" onPress={() => setMsg("Seeya!")} />
-            <Greeting title="Hello!" onPress={() => setMsg("Welcome!")} />
+            <Text
+                accessible={true}
+                accessibilityLabel='textMsg'
+                style={styles.textBox}>{msg}</Text>
+            <Greeting
+                testId='byeBtn'
+                title="Bye!" onPress={() => setMsg("Seeya!")} />
+            <Greeting
+                testId='helloBtn'
+                title="Hello!" onPress={() => setMsg("Welcome!")} />
         </View>
     );
 };

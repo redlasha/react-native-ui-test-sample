@@ -20,11 +20,15 @@
     "@react-native-community/eslint-config": "2.0.0",
     "@testing-library/react-native": "^7.2.0",
     "@types/jest": "^26.0.22",
+    "appium": "^1.20.2",
+    "appium-doctor": "^1.16.0",
     "babel-jest": "26.6.3",
     "eslint": "7.14.0",
     "jest": "26.6.3",
     "metro-react-native-babel-preset": "0.64.0",
-    "react-test-renderer": "17.0.1"
+    "pngjs": "^6.0.0",
+    "react-test-renderer": "17.0.1",
+    "wd": "^1.14.0"
   },
   "jest": {
     "preset": "react-native"
