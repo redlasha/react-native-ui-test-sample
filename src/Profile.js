@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import Greeting from "./Greeting";
 
+import {useRecoilValue} from "recoil"
+import {dataAtom} from "./atom"
+
 const Profile = ({ userName, name }) => {
     const [msg, setMsg] = useState("Select your status");
-
+    
+    const {nickname } = useRecoilValue(dataAtom)
+    console.log('nickname from atom: ', nickname)
+      
     return (
         <View style={styles.container}>
+            <Text>from atom : {nickname} </Text>
             <Text style={styles.textBox}>
                 {userName}({name})
             </Text>
@@ -19,8 +26,9 @@ const Profile = ({ userName, name }) => {
                 title="Bye!" onPress={() => setMsg("Seeya!")} />
             <Greeting
                 testId='helloBtn'
-                title="Hello!" onPress={() => setMsg("Welcome!")} />
+                title="Hello!" onPress={() => setMsg(nickname)} />
         </View>
+       
     );
 };
 

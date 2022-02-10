@@ -24,7 +24,9 @@ test('sample appium test', async () => {
     await element.click()
     const txtMsgEle = await driver.elementByAccessibilityId('textMsg');
     const txtValue = await txtMsgEle.text();
-    expect(txtValue).toBe('Welcome!');
+    expect(txtValue).toBe('홍길동');
+
+    console.log('finish test! ')
 });
 
 /**

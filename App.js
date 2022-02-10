@@ -14,6 +14,8 @@ import {
 
 import Profile from './src/Profile'
 
+import {RecoilRoot, useRecoilValue} from "recoil"
+import {dataAtom} from "./src/atom"
 /**
  * 포스팅
  * 
@@ -23,10 +25,14 @@ import Profile from './src/Profile'
  */
 
 const App = () => {
+  
+  
   return (
-    <View style={styles.container}>
-      <Profile userName={"tester"} name={"hslee"} />
-    </View>
+    <RecoilRoot>
+      <View style={styles.container}>
+        <Profile userName={"tester"} name={"hslee"} />
+      </View>
+    </RecoilRoot>
   );
 };
 
